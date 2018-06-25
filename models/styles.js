@@ -1,22 +1,20 @@
 'use strict';
 
 module.exports = (sequelize, DataTypes) => {
-    var Model = sequelize.define('types', {
-    'type_fr': {
-      type: DataTypes.STRING,
-    },
-
-        'type_en': {
+    var Model = sequelize.define('styles', {
+        'style_fr': {
+            type: DataTypes.STRING,
+        },
+        'style_en': {
             type: DataTypes.STRING,
         }
     }, {
-        tableName: 'types',
+        tableName: 'styles',
         timestamps: false,
 
     });
 
     Model.associate = (models) => {
-
     };
 
     return Model;
