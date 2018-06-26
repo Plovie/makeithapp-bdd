@@ -123,9 +123,9 @@ class PropositionService {
                 return models.proposals.findAll({where: {id: proposalId}})
             }).then((proposals) =>  {
                 const proposal = proposals[0]
-                // if(proposal.status ==='Acceptée') {
-                //     return Promise.reject('Vous ne pouvez plus modifier le status d\'une proposition si elle est Acceptée');
-                // }
+                if(proposal.status ==='Acceptée') {
+                    return Promise.reject('Vous ne pouvez plus modifier le status d\'une proposition si elle est Acceptée');
+                }
                 return proposal.id;
             })
     }
